@@ -71,4 +71,5 @@ TO DO 26 Mai
 		- Gerer le ctrl^C et ctrl^d : il y a un leak
 		- Le reste des images/sprites
 		- Animation ?
+		- Ennemis
 
