@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 13:32:18 by blax              #+#    #+#             */
-/*   Updated: 2023/05/26 15:09:38 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:15:20 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,17 +104,20 @@ void	print_map(char **map, int width, int height)
 
 int	main()
 {
+	int		i;
+	char	**map = generate_map(WIDTH, HEIGHT);
 	srand(time(NULL));
 	// Initialiser le générateur de nombres aléatoires
-	char	**map = generate_map(WIDTH, HEIGHT);
 
 	if (map != NULL)
 	{
 		print_map(map, WIDTH, HEIGHT);
 		// Libérer la mémoire allouée pour la carte
-		for (int i = 0; i < HEIGHT; i++)
+		i = 0;
+		while (i < HEIGHT)
 		{
 			free(map[i]);
+			i++;
 		}
 		free(map);
 	}

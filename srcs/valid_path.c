@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 23:58:11 by blax              #+#    #+#             */
-/*   Updated: 2023/05/26 15:05:37 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:17:32 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@ int	is_collectables(t_game *game)
 
 void	f_cfill(t_data *map, int row, int col)
 {
-	if (row < 0 || col < 0 || row >= map->size.y || col >= map->size.x ||
-		map->tab[row][col] == '1' || map->tab[row][col] == 'F' ||
+	if (row < 0 || col < 0 || row >= map->size.y || col >= map->size.x
+		|| map->tab[row][col] == '1' || map->tab[row][col] == 'F' ||
 		map->find == map->collectibles)
 		return ;
 	if (map->tab[row][col] == '0')

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_header.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edesaint <edesaint@student.42.fr>          +#+  +:+       +#+        */
+/*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 17:47:58 by blax              #+#    #+#             */
-/*   Updated: 2023/05/23 17:52:21 by edesaint         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:27:08 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 # define WINDOW_WIDTH 600
 # define WINDOW_HEIGHT 300
+// # define IMAGE_SIZE 50
 
 # define MLX_ERROR 1
 
