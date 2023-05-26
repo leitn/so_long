@@ -3,73 +3,73 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edesaint <edesaint@student.42.fr>          +#+  +:+       +#+        */
+/*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 11:49:01 by blax              #+#    #+#             */
-/*   Updated: 2023/05/23 20:34:31 by edesaint         ###   ########.fr       */
+/*   Updated: 2023/05/26 14:58:06 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int compt_collectibles(t_game *game)
+int	compt_collectibles(t_game *game)
 {
-    int i;
-    int j;
-    int cpt;
+	int	i;
+	int	j;
+	int	cpt;
 
-    i = 0;
-    j = 0;
-    cpt = 0;
-    while (i < game->map->size.y)
-    {
-        while (j < game->map->size.x)
-        {
-            if (game->map->tab[i][j] == 'C')
-                cpt++;
-            j++;
-        }
-        i++;
-        j = 0;
-    }
-    return (cpt);
+	i = 0;
+	j = 0;
+	cpt = 0;
+	while (i < game->map->size.y)
+	{
+		while (j < game->map->size.x)
+		{
+			if (game->map->tab[i][j] == 'C')
+				cpt++;
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+	return (cpt);
 }
 
-void init_size(t_game *game)
+void	init_size(t_game *game)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 0;
-    j = 0;
-    while (game->map->tab[i][j])
-        j++;
-    while (game->map->tab[i])
-        i++;
-    game->map->size.y = i;
-    game->map->size.x = j;
+	i = 0;
+	j = 0;
+	while (game->map->tab[i][j])
+		j++;
+	while (game->map->tab[i])
+		i++;
+	game->map->size.y = i;
+	game->map->size.x = j;
 }
 
-void init_player(t_game *game)
+void	init_player(t_game *game)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 0;
-    j = 0;
-    while (i < game->map->size.y)
-    {
-        while (j < game->map->size.x)
-        {
-            if (game->map->tab[i][j] == 'P')
-            {
-                game->map->player.pos.y = i;
-                game->map->player.pos.x = j;
-                return;
-            }
-            j++;
-        }
-        i++;
-        j = 0;
-    }
+	i = 0;
+	j = 0;
+	while (i < game->map->size.y)
+	{
+		while (j < game->map->size.x)
+		{
+			if (game->map->tab[i][j] == 'P')
+			{
+				game->map->player.pos.y = i;
+				game->map->player.pos.x = j;
+				return ;
+			}
+			j++;
+		}
+		i++;
+		j = 0;
+	}
 }

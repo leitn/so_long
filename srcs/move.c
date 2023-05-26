@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 21:33:33 by edesaint          #+#    #+#             */
-/*   Updated: 2023/05/25 15:29:24 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/26 14:33:40 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void ft_move_player(t_game *game, int offset_x, int offset_y)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 	// printf("je suis dans move_player !\n");
 	i = game->map->player.pos.y + offset_y;
 	j = game->map->player.pos.x + offset_x;
@@ -24,10 +24,11 @@ void ft_move_player(t_game *game, int offset_x, int offset_y)
 	ft_printf("nb_collect : %d\n", game->map->collectibles);
 	// printf("offset_x : %d\n", offset_x);
 	// printf("offset_y : %d\n", offset_y);
-	if (i <= 0 || j <= 0 || i >= game->map->size.y - 1 || j >= game->map->size.x - 1)
-		return;
+	if (i <= 0 || j <= 0 || i >= game->map->size.y - 1 ||
+		j >= game->map->size.x - 1)
+		return ;
 	if (game->map->tab[i][j] == '1')
-		return;
+		return ;
 	if (game->map->tab[i][j] == '0' || game->map->tab[i][j] == 'C')
 	{
 		ft_printf("c'est incroyable d'arriver la !\n");

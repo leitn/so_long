@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 13:32:18 by blax              #+#    #+#             */
-/*   Updated: 2023/05/25 15:41:52 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:09:38 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ char	**generate_map(int width, int height)
 		ft_printf("Erreur d'allocation de mémoire\n");
 		return (NULL);
 	}
-
-	for (i = 0; i < height; i++)
+	i = 0;
+	while (i < height)
 	{
 		map[i] = (char *)malloc(width * sizeof(char));
 		if (map[i] == NULL)
@@ -38,7 +38,8 @@ char	**generate_map(int width, int height)
 			ft_printf("Erreur d'allocation de mémoire\n");
 			return (NULL);
 		}
-		for (j = 0; j < width; j++)
+		j = 0;
+		while (j < width)
 		{
 			// Les bordures de la carte sont définies à 1
 			if (i == 0 || i == height - 1 || j == 0 || j == width - 1)
@@ -50,12 +51,14 @@ char	**generate_map(int width, int height)
 			/*L'intérieur est généré de manière aléatoire avec des valeurs de 0 ou 1*/
 				map[i][j] = '0' + rand() % 2;
 			}
+			j++;
 		}
+		i++;
 	}
 
 	// Positionner le joueur 'P', la sortie 'E' et les collectibles 'C'
-
-	special_positions = 1 + 1 + (rand() % 3 + 2); // P + E + 2 à 4 C
+	// P + E + 2 à 4 C
+	special_positions = 1 + 1 + (rand() % 3 + 2);
 	while (special_positions > 0)
 	{
 		x = rand() % (height - 2) + 1;
@@ -80,26 +83,32 @@ char	**generate_map(int width, int height)
 	return (map);
 }
 
-void print_map(char **map, int width, int height)
+void	print_map(char **map, int width, int height)
 {
 	int	i;
 	int	j;
 
-	for (i = 0; i < height; i++)
+	i = 0;
+	while (i < height)
 	{
-		for (j = 0; j < width; j++)
+		j = 0;
+		while (j < width)
 		{
-			ft_printf("%c ", map[i][j]);
+			ft_printf("%c", map[i][j]);
+			j++;
 		}
 		ft_printf("\n");
-    }
+		i++;
+	}
 }
 
 int	main()
 {
-	srand(time(NULL)); // Initialiser le générateur de nombres aléatoires
+	srand(time(NULL));
+	// Initialiser le générateur de nombres aléatoires
 	char	**map = generate_map(WIDTH, HEIGHT);
-	if(map != NULL)
+
+	if (map != NULL)
 	{
 		print_map(map, WIDTH, HEIGHT);
 		// Libérer la mémoire allouée pour la carte
@@ -109,5 +118,5 @@ int	main()
 		}
 		free(map);
 	}
-	return 0;
+	return (0);
 }

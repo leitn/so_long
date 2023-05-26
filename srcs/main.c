@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:20:46 by edesaint          #+#    #+#             */
-/*   Updated: 2023/05/26 14:28:42 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:08:54 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	print_map(t_data *map)
 	int	j;
 
 	i = 0;
-	j = 0;
 	while (i < map->size.y)
 	{
+		j = 0;
 		while (j < map->size.x)
 		{
 			if (j != 0)
