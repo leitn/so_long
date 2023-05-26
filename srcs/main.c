@@ -6,29 +6,36 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:20:46 by edesaint          #+#    #+#             */
-/*   Updated: 2023/05/25 15:24:13 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/26 14:28:42 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void print_map(t_data *map)
+void	print_map(t_data *map)
 {
-	for (int i = 0; i < map->size.y; i++)
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < map->size.y)
 	{
-		for (int j = 0; j < map->size.x; j++)
+		while (j < map->size.x)
 		{
 			if (j != 0)
 				ft_printf(" ");
 			ft_printf("%c", map->tab[i][j]);
+			j++;
 		}
 		ft_printf("\n");
+		i++;
 	}
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	t_game game;
+	t_game	game;
 
 	if (argc != 2)
 		ft_small_error("Invalid number of arguments !\n");
