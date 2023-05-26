@@ -6,7 +6,7 @@
 #    By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/29 04:53:24 by letnitan          #+#    #+#              #
-#    Updated: 2023/05/25 14:38:09 by letnitan         ###   ########.fr        #
+#    Updated: 2023/05/26 14:17:50 by letnitan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ OBJS = ${SRCS:.c=.o}
 # ----------------
 
 ${NAME} : ${OBJS}
+		@echo "ENTERING FT PRINTF COMPILATION"
 		ar rcs $@ $^
 		@echo "ft_printf compiled!"
 # it means : libftprint.a est cree a partir d'OBJS, et voila avec quelle commande : ar rc NAME OBJS.

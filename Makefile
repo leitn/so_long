@@ -32,6 +32,9 @@ GNL_OBJS = ${addprefix ${GNL_DIR}, ${GNL:.c=.o}}
 # /* ~~~~~~~ INCLUDING FT_PRINTF ~~~~~~~ */
 FT_PRINTF_DIR = ft_printf
 FT_PRINTF_MAKE = Makefile
+FT_PRINTF_SRCS = ft_printf/ft_printf_utils.c \
+				ft_printf/ft_printf.c \
+				ft_printf/ft_printf.h
 FT_PRINTF_PATH = $(FT_PRINTF_DIR)/libftprintf.a
 
 # /* ~~~~~~~ INCLUDING LIBFT ~~~~~~~ */
@@ -50,7 +53,7 @@ CFLAGS = -Wall -Werror -Wextra -g # -MMD
 MFLAGS = -ldl -lmlx -L${MLX_DIR} -lm -lXext -lX11 -Imlx $(MLX_PATH)
 IFLAGS:= -I ./includes
 LFLAGS:= -L $(LIBFT_DIR) -lft $(LIBFT_PATH)
-PFLAGS = $(FT_PRINTF_DIR)
+PFLAGS = $(FT_PRINTF_PATH)
 
 # /* ~~~~~~~ OTHER ~~~~~~~ */
 NAME = so_long
@@ -81,8 +84,8 @@ $(NAME): $(OBJS) $(GNL_OBJS)
 	@cd $(FT_PRINTF_DIR) && $(MAKE)
 	@echo $(CYAN) " - Ft_printf Ok" $(RED)
 	@echo $(CYAN) " - Compiling $@" $(RED)
-	# @$(CC) $(CFLAGS) $(OBJS) $(GNL_OBJS) $(SRCS_DIR) $(IFLAGS) $(LFLAGS) -o $(NAME) $(MFLAGS)
-	@$(CC) $(CFLAGS) $(OBJS) $(GNL_OBJS) $(IFLAGS) $(LFLAGS) -o $(NAME) $(MFLAGS)
+	# @$(CC) $(CFLAGS) $(OBJS) $(GNL_OBJS) $(SRCS_DIR) $(IFLAGS) $(LFLAGS) $(IFLAGS) $(PFLAGS) -o $(NAME) $(MFLAGS)
+	@$(CC) $(CFLAGS) $(OBJS) $(GNL_OBJS) $(IFLAGS) $(LFLAGS)  $(IFLAGS) $(PFLAGS) -o $(NAME) $(MFLAGS)
 	@echo $(GREEN) "[OK COMPILED]" $(EOC)
 
 # $(BONUS): $(OBJS) $(B_OBJS)
