@@ -5,7 +5,7 @@ Pour github, pour que le projet fonctionne:
 Telecharge le dossier avec tous les graphiques dedans provenant de TON github
 parce que je l'ai telecharger depuis ton github, il veut pas passer quand je commit car trop volumineux en taille
 
-et 
+et
 
 Telecharge la mlx_linux et decompresse la a la racine du projet
 
@@ -30,15 +30,15 @@ exemple d'arborescence fonctionnel:
 
 
 Pour completer correctement le projet:
-Dans le dossier principal so_long: 
+Dans le dossier principal so_long:
     - creer le dossier libft et mettre le fichier libft.a a l'interieur
     - creer le dossier get_next_line et mettre les fichiers .c de get_next_line a l'interieur
-    
+
 Le 18 mai 2023
 	Fais:
 		- creer le generateur de map avec chatGPT4
 		- mis a jour le code PC perso et 42
-		- fais la fonction de backtracking pour les collectibles 
+		- fais la fonction de backtracking pour les collectibles
 		(pour voir si tous les collectibles sont recuperables)
 		- fais la fonctions pour initilisiser les coordonnes du joueur dans l'objet principal map
 		- fais la fonction pour initialiser le nombre de collectibles dans l'objet principal map
@@ -57,11 +57,18 @@ Le 23 mai 2023
 		- faire disparaitres les objets quand on est dessus
 		- gestion des leaks (touche escape/terminer le jeu)
 		- Mise a jour du code en profondeur (reorganisation/ajout/suppression de fichiers, fonctions etc..)
-		
+
 	A faire:
 		- implementer toutes les positions et les differentes images dans le code.
 		- faire la gestion des ennemis (bonus)
 		- voir pour la liberation de la memoire quand on appuie sur ctrl + c
 		- voir pour les autres bonus (zoom)
-		
-	
+
+
+TO DO 26 Mai
+		- ouvrir la porte a max collectibles
+		- floodfill : la porte est un mur
+		- Gerer le ctrl^C et ctrl^d : il y a un leak
+		- Le reste des images/sprites
+		- Animation ?
+
