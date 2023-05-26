@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 16:13:49 by edesaint          #+#    #+#             */
-/*   Updated: 2023/05/26 15:27:17 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:43:06 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_init_game(t_game *game)
 	ft_init_map(game);
 	init_size(game);
 	game->width = game->map->size.x * 50;
-	game->height = game->map->size.y * 50;
+	game->height = game->map->size.y * 50 + 50;
 	init_player(game);
 	game->mlx_ptr = NULL;
 	game->win_ptr = NULL;
