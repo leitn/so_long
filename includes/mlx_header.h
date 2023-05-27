@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 17:47:58 by blax              #+#    #+#             */
-/*   Updated: 2023/05/26 15:27:08 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/27 16:13:02 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_player
 {
 	int vies;
 	int moved;
+	int moves;
 	t_point pos;
 } t_player;
 

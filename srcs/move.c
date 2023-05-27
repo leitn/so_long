@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 21:33:33 by edesaint          #+#    #+#             */
-/*   Updated: 2023/05/26 14:33:40 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:47:25 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void ft_move(t_game *game, int direction)
 	if (direction == LEFT)
 		ft_move_player(game, -1, 0);
 	game->map->player.moved = 1;
+	game->map->player.moves = game->map->player.moves + 1;
 }
 
 int	handle_keypress(int keycode, t_game *game)

@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 23:58:11 by blax              #+#    #+#             */
-/*   Updated: 2023/05/26 15:17:32 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:02:07 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	cpy_map(t_data *map, t_data *tmp_map)
 	tmp_map->collectibles = map->collectibles;
 	tmp_map->max_collectibles = map->max_collectibles;
 	tmp_map->find = map->find;
+	tmp_map->player.moves = map->player.moves;
 }
 
 int	is_exitable(t_game *game)
