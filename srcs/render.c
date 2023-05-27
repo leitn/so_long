@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:37:04 by blax              #+#    #+#             */
-/*   Updated: 2023/05/27 18:24:57 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/27 18:33:30 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int	draw_map(t_game *game)
 		i++;
 		j = 0;
 	}
-	// put_string_moves(game);
 	return (0);
 }
 
@@ -70,31 +69,17 @@ int	put_string_moves(t_game *game)
 
 	mv_count = ft_itoa(game->map->player.moves);
 	mv_count_minus = ft_itoa((game->map->player.moves) - 1);
-	if ((game->map->collectibles) < (game->map->max_collectibles))
-	{
-		ft_printf("collectibles < max collectibles\n");
-		ft_printf("mv_count = %d\n", mv_count);
-		mlx_set_font(game->mlx_ptr, game->win_ptr, "10x20");
-		mlx_string_put(game->mlx_ptr, game->win_ptr, ((game->width) / 2) - 100,
-			((game->height) - 25 ), 0x00BFFF, "The number of steps : ");
-		mlx_string_put(game->mlx_ptr, game->win_ptr,((game->width) / 2) + 100,
-			((game->height) - 25 ), 0x000000, mv_count_minus);
-		mlx_string_put(game->mlx_ptr, game->win_ptr, ((game->width) / 2) + 100,
-			((game->height) - 25 ), 0x00BFFF, mv_count);
-	}
-	else if((game->map->collectibles) == (game->map->max_collectibles))
-	{
-		mlx_string_put(game->mlx_ptr, game->win_ptr, ((game->width) / 2) - 100,
-			((game->height) - 25 ), 0x00000, "The number of steps : ");
-		mlx_string_put(game->mlx_ptr, game->win_ptr,((game->width) / 2) + 100,
-			((game->height) - 25 ), 0x000000, mv_count_minus);
-		mlx_string_put(game->mlx_ptr, game->win_ptr, ((game->width) / 2) - 100,
-			((game->height) - 25 ), 0x00BFFF, "Go the cauldron !");
-	}
-	ft_printf("Out of the if clauses\n");
-	free(mv_count);
-	free(mv_count_minus);
-	return (0);
+	mlx_set_font(game->mlx_ptr, game->win_ptr, "10x20");
+	mlx_string_put(game->mlx_ptr, game->win_ptr, ((game->width) / 2) - 100,
+		((game->height) - 25 ), 0x00BFFF, "The number of steps : ");
+	mlx_string_put(game->mlx_ptr, game->win_ptr,((game->width) / 2) + 100,
+		((game->height) - 25 ), 0x000000, mv_count_minus);
+	mlx_string_put(game->mlx_ptr, game->win_ptr, ((game->width) / 2) + 100,
+		((game->height) - 25 ), 0x00BFFF, mv_count);
+ 	if((game->map->collectibles) == (game->map->max_collectibles))
+		mlx_string_put(game->mlx_ptr, game->win_ptr, ((game->width) / 2) - 80,
+			((game->height) - 5 ), 0x00BFFF, "Go the cauldron !");
+	return (free(mv_count), free(mv_count_minus), 0);
 }
 
 void	draw_image(t_game *game, int i, int j, char letter)
