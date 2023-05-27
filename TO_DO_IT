@@ -72,4 +72,8 @@ TO DO 26 Mai
 		- Le reste des images/sprites
 		- Animation ?
 		- Ennemis
-		- Compteur de pas sur la map !
+		- Compteur de pas sur la map ! Update 27 Mai : Done
+
+TO DO 27 Mai
+		- Fonction ft_move_player dans move.c trop long
+		- Comment animer les sprites ?
