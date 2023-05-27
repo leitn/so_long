@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 21:33:33 by edesaint          #+#    #+#             */
-/*   Updated: 2023/05/26 15:47:25 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/27 18:21:02 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,12 @@ void ft_move_player(t_game *game, int offset_x, int offset_y)
 {
 	int	i;
 	int	j;
-	// printf("je suis dans move_player !\n");
+
 	i = game->map->player.pos.y + offset_y;
 	j = game->map->player.pos.x + offset_x;
 	ft_printf("pos.x : %d\n", game->map->player.pos.x);
 	ft_printf("pos.y : %d\n", game->map->player.pos.y);
 	ft_printf("nb_collect : %d\n", game->map->collectibles);
-	// printf("offset_x : %d\n", offset_x);
-	// printf("offset_y : %d\n", offset_y);
 	if (i <= 0 || j <= 0 || i >= game->map->size.y - 1 ||
 		j >= game->map->size.x - 1)
 		return ;
@@ -31,7 +29,6 @@ void ft_move_player(t_game *game, int offset_x, int offset_y)
 		return ;
 	if (game->map->tab[i][j] == '0' || game->map->tab[i][j] == 'C')
 	{
-		ft_printf("c'est incroyable d'arriver la !\n");
 		if (game->map->tab[i][j] == 'C')
 			game->map->collectibles++;
 		game->map->tab[i][j] = 'P';
@@ -93,6 +90,7 @@ int loop_hook(t_game *game)
 	if (game->map->player.moved == 1)
 	{
 		draw_map(game);
+		// put_string_moves(game);
 		game->map->player.moved = 0;
 	}
 	return (0);

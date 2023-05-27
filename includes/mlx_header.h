@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 17:47:58 by blax              #+#    #+#             */
-/*   Updated: 2023/05/27 16:13:02 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/27 18:15:13 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 
 # define WINDOW_WIDTH 600
 # define WINDOW_HEIGHT 300
-// # define IMAGE_SIZE 50
 
 # define MLX_ERROR 1
 
@@ -59,20 +58,7 @@ typedef struct s_data
 typedef struct s_img
 {
 	void	*mlx_img;
-	char	*addr;
-	int		bpp; /* bits per pixel */
-	int		line_len;
-	int		endian;
 }	t_img;
-
-// typedef struct s_rect
-// {
-// 	int	x;
-// 	int	y;
-// 	int width;
-// 	int height;
-// 	int color;
-// }	t_rect;
 
 typedef struct s_game{
     void *mlx_ptr;
@@ -94,5 +80,6 @@ void charge_images(t_game *game);
 int draw_map(t_game *game);
 void draw_image(t_game *game, int i, int j, char letter);
 int loop_hook(t_game *game);
+int put_string_moves(t_game *game);
 
 #endif
