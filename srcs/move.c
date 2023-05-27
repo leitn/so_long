@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 21:33:33 by edesaint          #+#    #+#             */
-/*   Updated: 2023/05/27 18:32:10 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/27 18:37:54 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ int loop_hook(t_game *game)
 	if (game->map->player.moved == 1)
 	{
 		draw_map(game);
-		put_string_moves(game);
 		game->map->player.moved = 0;
 	}
 	return (0);

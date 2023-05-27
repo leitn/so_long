@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:37:04 by blax              #+#    #+#             */
-/*   Updated: 2023/05/27 18:33:30 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/27 18:39:02 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int	draw_map(t_game *game)
 		i++;
 		j = 0;
 	}
+	put_string_moves(game);
 	return (0);
 }
 
