@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 17:47:58 by blax              #+#    #+#             */
-/*   Updated: 2023/05/27 18:15:13 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/27 19:29:09 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ typedef struct s_game{
 	t_point img_ppixel;
     int width;
     int height;
+	int ctrl_bool;
 } t_game;
 
 void charge_images(t_game *game);

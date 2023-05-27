@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 16:13:49 by edesaint          #+#    #+#             */
-/*   Updated: 2023/05/27 18:32:25 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/27 19:29:26 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_init_game(t_game *game)
 	game->map->max_collectibles = compt_collectibles(game);
 	game->map->player.moves = 0;
 	game->map->player.moved = 0;
+	game->ctrl_bool = 0;
 	ft_printf("INITIALISATION:\n");
 	ft_printf("    game height: %d \n", (game->height));
 	ft_printf("    game widtht: %d \n", (game->width));

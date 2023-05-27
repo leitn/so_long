@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 21:33:33 by edesaint          #+#    #+#             */
-/*   Updated: 2023/05/27 18:37:54 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/27 19:30:56 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,16 @@ int	handle_keypress(int keycode, t_game *game)
 		write(1, "You have just left the game !\n", 31);
 		exit (EXIT_SUCCESS);
 	}
+	if (keycode == XK_Control_L || keycode == XK_Control_R)
+		game->ctrl_bool = 1;
+	else if ((keycode == XK_C || keycode == XK_c) && game->ctrl_bool == 1)
+	{
+		free_all(game);
+		write(1, "You have just left the game !\n", 31);
+		exit (EXIT_SUCCESS);
+	}
+	else
+		game->ctrl_bool = 0;
 	return (0);
 }
 
