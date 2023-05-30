@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:37:04 by blax              #+#    #+#             */
-/*   Updated: 2023/05/30 16:00:44 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/30 18:02:26 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,16 @@ void	draw_image(t_game *game, int i, int j, char letter)
 			game->mlx_ptr, game->win_ptr, game->map->ground.img, j, i);
 	else if (letter == 'P')
 		mlx_put_image_to_window(
-			game->mlx_ptr, game->win_ptr, game->map->collect.img1.img, j, i);
+			game->mlx_ptr, game->win_ptr, game->map->player.backfacing[0].img, j, i);
 	else if (letter == 'C')
 		mlx_put_image_to_window(
-			game->mlx_ptr, game->win_ptr, game->map->player.backfacing[0].img, j, i);
-	else if (letter == 'E')
+			game->mlx_ptr, game->win_ptr, game->map->collect.img1.img, j, i);
+	else if ((letter == 'E') && (game->map->collectibles < game->map->max_collectibles))
 		mlx_put_image_to_window(
 			game->mlx_ptr, game->win_ptr, game->map->exit.img1.img, j, i);
+	else if ((letter == 'E') && (game->map->collectibles == game->map->max_collectibles))
+		mlx_put_image_to_window(
+			game->mlx_ptr, game->win_ptr, game->map->exit.img2.img, j, i);
 	else if (letter == 'M')
 		mlx_put_image_to_window(
 			game->mlx_ptr, game->win_ptr, game->map->ennemi.img1.img, j, i);
