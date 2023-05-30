@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 22:11:44 by edesaint          #+#    #+#             */
-/*   Updated: 2023/05/30 20:01:22 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/30 20:26:04 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_small_error(char *msg)
 {
-	write(2, "Error:\n", 7);
+	write(2, "Error\n", 7);
 	write(2, msg, ft_strlen(msg));
 	exit (EXIT_FAILURE);
 }
@@ -22,7 +22,7 @@ int	ft_small_error(char *msg)
 int	ft_error_map(t_game *game, char *msg)
 {
 	free_map(&game->map);
-	write(2, "Error:\n", 7);
+	write(2, "Error\n", 7);
 	write(2, msg, ft_strlen(msg));
 	exit(EXIT_FAILURE);
 }
@@ -30,7 +30,7 @@ int	ft_error_map(t_game *game, char *msg)
 int	ft_error(t_game *game, char *msg)
 {
 	free_all(game);
-	write(2, "Error:\n", 7);
+	write(2, "Error\n", 7);
 	write(2, msg, ft_strlen(msg));
 	exit(EXIT_FAILURE);
 }
