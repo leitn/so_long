@@ -35,6 +35,7 @@ Dans le dossier principal so_long:
     - creer le dossier get_next_line et mettre les fichiers .c de get_next_line a l'interieur
 
 Le 18 mai 2023
+
 	Fais:
 		- creer le generateur de map avec chatGPT4
 		- mis a jour le code PC perso et 42
@@ -51,6 +52,7 @@ Le 18 mai 2023
 		- creer les enemis
 
 Le 23 mai 2023
+
 	Fais:
 		- afficher les elements graphiques a l'ecran
 		- faire bouger le personnage
@@ -65,15 +67,28 @@ Le 23 mai 2023
 		- voir pour les autres bonus (zoom)
 
 
-TO DO 26 Mai
+26 Mai
+
+	TO DO:
 		- ouvrir la porte a max collectibles
 		- floodfill : la porte est un mur
 		- Gerer le ctrl^C et ctrl^d : il y a un leak
 		- Le reste des images/sprites
 		- Animation ?
 		- Ennemis
-		- Compteur de pas sur la map ! Update 27 Mai : Done
+		- Compteur de pas sur la map !
 
-TO DO 27 Mai
+ 27 Mai
+
+	DONE :
+		- Ctrl C
+		- Compteur de Pas
+		- Images
+
+et
+
+	TO DO :
 		- Fonction ft_move_player dans move.c trop long
 		- Comment animer les sprites ?
+		- Peut etre : gerer le time entre ctrl et C (librairie time, sttructure ctrl_bool ?)
+

@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 22:11:44 by edesaint          #+#    #+#             */
-/*   Updated: 2023/05/26 14:26:45 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/30 16:19:18 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,7 @@ void	free_map(t_data **map)
 void	free_images(t_game *game)
 {
 	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
-	mlx_destroy_image(game->mlx_ptr, game->img_player.mlx_img);
-	mlx_destroy_image(game->mlx_ptr, game->img_collect.mlx_img);
-	mlx_destroy_image(game->mlx_ptr, game->img_wall.mlx_img);
-	mlx_destroy_image(game->mlx_ptr, game->img_ennemi.mlx_img);
-	mlx_destroy_image(game->mlx_ptr, game->img_ground.mlx_img);
-	mlx_destroy_image(game->mlx_ptr, game->img_exit.mlx_img);
+	destroy_images(game);
 	mlx_destroy_display(game->mlx_ptr);
 	free(game->mlx_ptr);
 }

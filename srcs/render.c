@@ -6,41 +6,11 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:37:04 by blax              #+#    #+#             */
-/*   Updated: 2023/05/27 19:11:59 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/30 16:00:44 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-// Charge une image XPM
-void	charge_images(t_game *game)
-{
-	game->img_ppixel.x = game->width / (game->map->size.x);
-	game->img_ppixel.y = game->height / (game->map->size.y);
-
-	game->img_player.mlx_img = mlx_xpm_file_to_image(game->mlx_ptr, \
-		"graphics/player/back00.xpm", &game->img_ppixel.x,  &game->img_ppixel.y);
-	game->img_collect.mlx_img = mlx_xpm_file_to_image(game->mlx_ptr, \
-		"graphics/collect/b01.xpm", &game->img_ppixel.x, &game->img_ppixel.y);
-	game->img_wall.mlx_img = mlx_xpm_file_to_image(game->mlx_ptr, \
-		"graphics/map/wall_down.xpm", &game->img_ppixel.x, &game->img_ppixel.y);
-	game->img_ennemi.mlx_img = mlx_xpm_file_to_image(game->mlx_ptr, \
-		"graphics/enemy/rightghost.xpm", &game->img_ppixel.x, &game->img_ppixel.y);
-	game->img_exit.mlx_img = mlx_xpm_file_to_image(game->mlx_ptr, \
-		"graphics/exit/exit0.xpm", &game->img_ppixel.x, &game->img_ppixel.y);
-	game->img_ground.mlx_img = mlx_xpm_file_to_image(game->mlx_ptr, \
-		"graphics/ground/sand.xpm", &game->img_ppixel.x, &game->img_ppixel.y);
-	if (game->img_player.mlx_img == NULL \
-		|| game->img_collect.mlx_img == NULL \
-		|| game->img_wall.mlx_img == NULL\
-		|| game->img_ennemi.mlx_img == NULL \
-		|| game->img_exit.mlx_img == NULL \
-		|| game->img_ground.mlx_img == NULL)
-	{
-		ft_printf("Erreur lors du chargement de l'image\n");
-		return ;
-	}
-}
 
 int	draw_map(t_game *game)
 {
@@ -87,22 +57,22 @@ void	draw_image(t_game *game, int i, int j, char letter)
 {
 	if (letter == '1')
 		mlx_put_image_to_window(
-			game->mlx_ptr, game->win_ptr, game->img_wall.mlx_img, j, i);
+			game->mlx_ptr, game->win_ptr, game->map->wall.img1.img, j, i);
 	else if (letter == '0')
 		mlx_put_image_to_window(
-			game->mlx_ptr, game->win_ptr, game->img_ground.mlx_img, j, i);
+			game->mlx_ptr, game->win_ptr, game->map->ground.img, j, i);
 	else if (letter == 'P')
 		mlx_put_image_to_window(
-			game->mlx_ptr, game->win_ptr, game->img_player.mlx_img, j, i);
+			game->mlx_ptr, game->win_ptr, game->map->collect.img1.img, j, i);
 	else if (letter == 'C')
 		mlx_put_image_to_window(
-			game->mlx_ptr, game->win_ptr, game->img_collect.mlx_img, j, i);
+			game->mlx_ptr, game->win_ptr, game->map->player.backfacing[0].img, j, i);
 	else if (letter == 'E')
 		mlx_put_image_to_window(
-			game->mlx_ptr, game->win_ptr, game->img_exit.mlx_img, j, i);
+			game->mlx_ptr, game->win_ptr, game->map->exit.img1.img, j, i);
 	else if (letter == 'M')
 		mlx_put_image_to_window(
-			game->mlx_ptr, game->win_ptr, game->img_ennemi.mlx_img, j, i);
+			game->mlx_ptr, game->win_ptr, game->map->ennemi.img1.img, j, i);
 }
 
 // mlx_string_put(game->mlx_ptr, game->win_ptr, 225, 275, 0x00BFFF, "The number of steps : ");

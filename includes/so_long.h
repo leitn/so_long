@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 11:13:47 by blax              #+#    #+#             */
-/*   Updated: 2023/05/25 15:41:15 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/30 16:25:01 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,40 @@ void	f_cfill(t_data *map, int row, int col);
 //utils_2.c
 char	**make_area(char **zone, int _x, int _y);
 void	verif_map(t_game *game);
+
+//check_path.c
+void	check_path_images(t_game *game);
+void	check_path_image(t_game *game, char *path);
+
+//check_path_2.c
+void	check_path_image_collectibles(t_game *game);
+void	check_path_image_ennemi(t_game *game);
+void	check_path_image_exit(t_game *game);
+void	check_path_image_player(t_game *game);
+void	check_path_image_wall(t_game *game);
+
+//charge_images_1.c
+void	charge_image(t_game *game, t_img *img, char *path);
+void	charge_images(t_game *game);
+int		draw_map(t_game *game);
+void	draw_image(t_game *game, int i, int j, char letter);
+int		loop_hook(t_game *game);
+int		put_string_moves(t_game *game);
+
+//charge images 2
+void	charge_image_collectibles(t_game *game);
+void	charge_image_ennemi(t_game *game);
+void	charge_image_exit(t_game *game);
+void	charge_image_player(t_game *game);
+void	charge_image_wall(t_game *game);
+
+//destroyimages 1 et 2
+void	destroy_image(t_game *game, t_img *img);
+void	destroy_images(t_game *game);
+void	destroy_image_collectibles(t_game *game);
+void	destroy_image_ennemi(t_game *game);
+void	destroy_image_exit(t_game *game);
+void	destroy_image_player(t_game *game);
+void	destroy_image_wall(t_game *game);
 
 #endif

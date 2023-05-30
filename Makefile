@@ -1,12 +1,4 @@
 CC = cc
-# NAME = so_long.a
-
-# INCLUDES = ./mlx_linux/mlx.h
-# CFLAGS = -Wall -Wextra -Werror
-
-# RM = rm -f
-# AR = ar
-# ARFLAGS = crs
 
 # /* ~~~~~~ SOURCES ~~~~~~ */
 SRCS_DIR = srcs/
@@ -18,7 +10,13 @@ SRCS = main.c \
 		valid_map.c \
 		valid_path.c \
 		utils.c \
-		utils_2.c
+		utils_2.c \
+		charge_images_1.c \
+		charge_image_2.c \
+		destroy_images_1.c \
+		destroy_images_2.c \
+		check_path.c \
+		check_path_2.c \
 
 OBJS = ${addprefix ${SRCS_DIR}, ${SRCS:.c=.o}}
 
