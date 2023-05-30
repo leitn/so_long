@@ -6,13 +6,13 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 21:33:33 by edesaint          #+#    #+#             */
-/*   Updated: 2023/05/27 19:30:56 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/30 20:07:02 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void ft_move_player(t_game *game, int offset_x, int offset_y)
+void	ft_move_player(t_game *game, int offset_x, int offset_y)
 {
 	int	i;
 	int	j;
@@ -52,7 +52,7 @@ void ft_move_player(t_game *game, int offset_x, int offset_y)
 	print_map(game->map);
 }
 
-void ft_move(t_game *game, int direction)
+void	ft_move(t_game *game, int direction)
 {
 	if (direction == UP)
 		ft_move_player(game, 0, -1);
@@ -95,7 +95,8 @@ int	handle_keypress(int keycode, t_game *game)
 	return (0);
 }
 
-int loop_hook(t_game *game)
+
+int	loop_hook(t_game *game)
 {
 	if (game->map->player.moved == 1)
 	{

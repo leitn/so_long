@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:20:46 by letnitan          #+#    #+#             */
-/*   Updated: 2023/05/27 20:12:46 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/30 20:09:09 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int	main(int argc, char *argv[])
 	draw_map(&game);
 	mlx_loop_hook(game.mlx_ptr, loop_hook, &game);
 	mlx_key_hook(game.win_ptr, handle_keypress, &game);
+	mlx_hook(game.win_ptr, 17, 0, ft_click, &game);
 	mlx_loop(game.mlx_ptr);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 11:13:47 by blax              #+#    #+#             */
-/*   Updated: 2023/05/30 16:25:01 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/30 20:11:40 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int		is_map_close(t_data *map, char letter);
 void	init_size(t_game *game);
 int		compt_collectibles(t_game *game);
 void	init_player(t_game *game);
+int		ft_click(t_game *game);
 
 // valid_path.c
 void	cpy_map(t_data *map, t_data *tmp_map);
@@ -96,10 +97,14 @@ void	check_path_image_wall(t_game *game);
 //charge_images_1.c
 void	charge_image(t_game *game, t_img *img, char *path);
 void	charge_images(t_game *game);
+
+//render.c
 int		draw_map(t_game *game);
 void	draw_image(t_game *game, int i, int j, char letter);
 int		loop_hook(t_game *game);
 int		put_string_moves(t_game *game);
+void	draw_collectible(t_game	*game, int j, int i);
+
 
 //charge images 2
 void	charge_image_collectibles(t_game *game);

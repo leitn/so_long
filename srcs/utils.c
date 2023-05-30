@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 11:49:01 by blax              #+#    #+#             */
-/*   Updated: 2023/05/27 15:38:39 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/30 20:11:18 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,11 @@ void	init_player(t_game *game)
 		j = 0;
 	}
 	// game->map->player.moves = 0;
+}
+int	ft_click(t_game *game)
+{
+	free_all(game);
+	write(1, "You have just left the game !\n", 31);
+	exit (EXIT_SUCCESS);
+	return (0);
 }
