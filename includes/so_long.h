@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 11:13:47 by blax              #+#    #+#             */
-/*   Updated: 2023/05/30 20:11:40 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/31 18:50:10 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include <time.h>
+# include <sys/time.h>
 
 # include "mlx_header.h"
 # include "../libft/libft.h"

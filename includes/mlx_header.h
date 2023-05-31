@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 17:47:58 by blax              #+#    #+#             */
-/*   Updated: 2023/05/30 19:32:47 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/31 19:09:41 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <X11/X.h>
 # include <X11/keysym.h>
 # include "../mlx_linux/mlx.h"
+# include <sys/time.h>
 
 # define WINDOW_WIDTH 600
 # define WINDOW_HEIGHT 300
@@ -96,7 +97,7 @@ typedef struct s_data
 	int			find;
 	t_point		size;
 	t_player	player;
-	t_objet		collect;
+	t_img		collect[3];
 	t_objet		wall;
 	t_objet		exit;
 	t_objet		ennemi;
@@ -104,14 +105,16 @@ typedef struct s_data
 }	t_data;
 
 typedef struct s_game{
-	void	*mlx_ptr;
-	void	*win_ptr;
-	char	*filename;
-	t_data	*map;
-	t_point	img_ppixel;
-	int		width;
-	int		height;
-	int		ctrl_bool;
+	void				*mlx_ptr;
+	void				*win_ptr;
+	char				*filename;
+	t_data				*map;
+	t_point				img_ppixel;
+	int					width;
+	int					height;
+	int					ctrl_bool;
+	// struct timeval		now_time;
+	// struct timeval		previous_time;
 }	t_game;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 20:18:41 by letnitan          #+#    #+#             */
-/*   Updated: 2023/05/30 15:50:29 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/31 19:11:08 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	charge_image_collectibles(t_game *game)
 {
-	charge_image(game, &game->map->collect.img1, COLLECT_1);
-	charge_image(game, &game->map->collect.img2, COLLECT_2);
-	charge_image(game, &game->map->collect.img3, COLLECT_3);
+	charge_image(game, &game->map->collect[0], COLLECT_1);
+	charge_image(game, &game->map->collect[1], COLLECT_2);
+	charge_image(game, &game->map->collect[2], COLLECT_3);
 }
 
 void	charge_image_ennemi(t_game *game)

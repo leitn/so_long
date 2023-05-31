@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 16:09:06 by letnitan          #+#    #+#             */
-/*   Updated: 2023/05/30 16:14:23 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/05/31 19:12:11 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	destroy_image_collectibles(t_game *game)
 {
-	destroy_image(game, &game->map->collect.img1);
-	destroy_image(game, &game->map->collect.img2);
-	destroy_image(game, &game->map->collect.img3);
+	destroy_image(game, &game->map->collect[0]);
+	destroy_image(game, &game->map->collect[1]);
+	destroy_image(game, &game->map->collect[2]);
 }
 
 void	destroy_image_ennemi(t_game *game)
