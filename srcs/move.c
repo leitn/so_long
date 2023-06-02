@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 21:33:33 by edesaint          #+#    #+#             */
-/*   Updated: 2023/06/02 14:48:25 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/06/02 15:02:39 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@ int	ft_move_player(t_game *game, int offset_x, int offset_y)
 
 	i = game->map->player.pos.y + offset_y;
 	j = game->map->player.pos.x + offset_x;
-	ft_printf("pos.x : %d\n", game->map->player.pos.x);
-	ft_printf("pos.y : %d\n", game->map->player.pos.y);
-	ft_printf("nb_collect : %d\n", game->map->collectibles);
 	if (i <= 0 || j <= 0 || i >= game->map->size.y - 1
 		|| j >= game->map->size.x - 1)
 		return (0);
-	if (game->map->tab[i][j] == '1')
+	if (game->map->tab[i][j] == '1' || (game->map->tab[i][j] == 'E'
+		&& (game->map->collectibles != game->map->max_collectibles)))
 		return (0);
 	if (game->map->tab[i][j] == '0' || game->map->tab[i][j] == 'C')
 	{
