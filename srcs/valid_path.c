@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 23:58:11 by blax              #+#    #+#             */
-/*   Updated: 2023/05/27 18:32:19 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/06/02 14:34:30 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,14 @@ int	is_exitable(t_game *game)
 
 void	f_efill(t_data *map, int row, int col)
 {
-	if (row < 0 || col < 0 || row >= map->size.y || col >= map->size.x ||
-		map->tab[row][col] == '1' || map->tab[row][col] == 'F' ||
-		map->find == 1)
+	if (row < 0 || col < 0 || row >= map->size.y || col >= map->size.x
+		|| map->tab[row][col] == '1' || map->tab[row][col] == 'F'
+		|| map->find == 1)
 		return ;
-	if (map->tab[row][col] == '0')
+	if (map->tab[row][col] == '0' || map->tab[row][col] == 'C')
 		map->tab[row][col] = 'F';
 	if (map->tab[row][col] == 'E')
 		map->find = 1;
-
 	f_efill(map, row -1, col);
 	f_efill(map, row +1, col);
 	f_efill(map, row, col - 1);
@@ -93,7 +92,6 @@ void	f_cfill(t_data *map, int row, int col)
 		map->tab[row][col] = 'F';
 	if (map->tab[row][col] == 'C')
 		map->find += 1;
-
 	f_cfill(map, row -1, col);
 	f_cfill(map, row +1, col);
 	f_cfill(map, row, col - 1);

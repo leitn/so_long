@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 16:13:49 by edesaint          #+#    #+#             */
-/*   Updated: 2023/05/31 19:09:21 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/06/02 14:27:34 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,15 @@ void	ft_init_game(t_game *game)
 	init_size(game);
 	game->width = game->map->size.x * 50;
 	game->height = game->map->size.y * 50 + 50;
+	game->map->max_collectibles = compt_collectibles(game);
 	init_player(game);
 	game->mlx_ptr = NULL;
 	game->win_ptr = NULL;
 	game->map->find = 0;
 	game->map->collectibles = 0;
-	game->map->max_collectibles = compt_collectibles(game);
 	game->map->player.moves = 0;
 	game->map->player.moved = 0;
 	game->ctrl_bool = 0;
-	// game->now_time = 16666666;
-	// game ->previous_time = 0;
-	ft_printf("INITIALISATION:\n");
-	ft_printf("    game height: %d \n", (game->height));
-	ft_printf("    game widtht: %d \n", (game->width));
-	ft_printf("    size.x : %d\n", game->map->size.x);
-	ft_printf("    size.y : %d\n", game->map->size.y);
-	ft_printf("    player.pos.x : %d\n", game->map->player.pos.x);
-	ft_printf("    player.pos.y : %d\n", game->map->player.pos.y);
-	ft_printf("    nb_max_collect : %d\n", game->map->max_collectibles);
 }
 
 void	ft_init_mlx(t_game *game)
@@ -47,6 +37,7 @@ void	ft_init_mlx(t_game *game)
 	game->mlx_ptr = mlx_init();
 	if (!game->mlx_ptr)
 	{
+		free_map(&game->map);
 		free(game->map);
 		ft_small_error("Mlx Error init !\n");
 	}

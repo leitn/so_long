@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 11:13:47 by blax              #+#    #+#             */
-/*   Updated: 2023/05/31 18:50:10 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/06/02 14:47:59 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,9 @@ void	free_images(t_game *game);
 void	free_all(t_game *game);
 
 //move.c
-void	ft_move_player(t_game *game, int offset_x, int offset_y);
+int		ft_move_player(t_game *game, int offset_x, int offset_y);
 void	ft_move(t_game *game, int direction);
+int		ft_move_character(t_game *game, int offset_x, int offset_y);
 int		handle_keypress(int keycode, t_game *game);
 
 // init.c

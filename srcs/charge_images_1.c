@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 20:17:42 by letnitan          #+#    #+#             */
-/*   Updated: 2023/05/30 16:25:35 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/06/01 18:12:15 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	charge_image(t_game *game, t_img *img, char *path)
 {
-	// init_images(game); mettre tous les pointeurs des images a NULL
 	img->img = mlx_xpm_file_to_image(game->mlx_ptr,
 			path, &game->img_ppixel.x, &game->img_ppixel.y);
 	if (img->img == NULL)
