@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 23:58:11 by blax              #+#    #+#             */
-/*   Updated: 2023/06/02 14:34:30 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/06/02 16:51:22 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,14 @@ int	is_collectables(t_game *game)
 	tmp_map->tab = make_area(game->map->tab, game->map->size.x,
 			game->map->size.y);
 	cpy_map(game->map, tmp_map);
+	tmp_map->find = 0;
 	f_cfill(tmp_map, tmp_map->player.pos.y, tmp_map->player.pos.x);
-	collectibles = tmp_map->collectibles;
+	collectibles = tmp_map->find;
+	ft_printf("\n\n tmp_map->find == %d\n", tmp_map->find);
+	ft_printf("\n\n game->map->max_collectibles == %d\n\n", game->map->max_collectibles);
+	print_map(tmp_map);
 	free_map(&tmp_map);
-	if (game->map->collectibles == collectibles)
+	if (game->map->collectibles == game->map->max_collectibles)
 		return (1);
 	else
 		return (0);
@@ -85,15 +89,18 @@ int	is_collectables(t_game *game)
 void	f_cfill(t_data *map, int row, int col)
 {
 	if (row < 0 || col < 0 || row >= map->size.y || col >= map->size.x
-		|| map->tab[row][col] == '1' || map->tab[row][col] == 'F' ||
-		map->find == map->collectibles)
+		|| map->tab[row][col] == '1' || map->tab[row][col] == 'F'
+		|| map->tab[row][col] == 'E')
 		return ;
 	if (map->tab[row][col] == '0')
 		map->tab[row][col] = 'F';
 	if (map->tab[row][col] == 'C')
-		map->find += 1;
-	f_cfill(map, row -1, col);
-	f_cfill(map, row +1, col);
-	f_cfill(map, row, col - 1);
-	f_cfill(map, row, col + 1);
+	{
+		map->tab[row][col] = 'X';
+		map->find++;
+	}
+	f_efill(map, row - 1, col);
+	f_efill(map, row + 1, col);
+	f_efill(map, row, col - 1);
+	f_efill(map, row, col + 1);
 }
