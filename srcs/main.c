@@ -6,7 +6,7 @@
 /*   By: letnitan <letnitan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:20:46 by letnitan          #+#    #+#             */
-/*   Updated: 2023/06/01 18:17:36 by letnitan         ###   ########.fr       */
+/*   Updated: 2023/06/02 17:16:59 by letnitan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char *argv[])
 		ft_small_error("Invalid number of arguments !\n");
 	game.filename = argv[1];
 	ft_init_game(&game);
-	verif_map(&game);
+	verif_map(&game); //BUG MAP CLOSE
 	if (!is_exitable(&game) || !is_collectables(&game))
 		ft_error_map(&game, "No valid path for this map was found !\n");
 	ft_init_mlx(&game);
